@@ -117,6 +117,8 @@ public class OPButtonsAndGesturesSettings extends DashboardFragment implements P
         } else {
             this.mButtonsSettingsPreference.setVisible(false);
         }
+        removePreference(KEY_ALERTSLIDER_SETTINGS_SOC_TRI_STATE);
+        removePreference(FINGERPRINT_LONG_PRESS_CAMERA_SHOT_KEY);
     }
 
     /* access modifiers changed from: private */

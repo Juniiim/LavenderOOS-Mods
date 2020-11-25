@@ -171,6 +171,13 @@ public class OPGestureSettings extends SettingsPreferenceFragment implements Pre
             this.mBlackScreenPrefererce.removePreference(this.mDrawMStartAppPreference);
             this.mBlackScreenPrefererce.removePreference(this.mDrawWStartAppPreference);
         }
+        removePreference(DRAW_O_START_CAMERA_KEY);
+        removePreference(MUSCI_CONTROL_KEY);
+        removePreference(OPConstants.KEY_DRAW_M_START_APP);
+        removePreference(OPConstants.KEY_DRAW_O_START_APP);
+        removePreference(OPConstants.KEY_DRAW_S_START_APP);
+        removePreference(OPConstants.KEY_DRAW_V_START_APP);
+        removePreference(OPConstants.KEY_DRAW_W_START_APP);
     }
 
     private void initGestureSummary() {

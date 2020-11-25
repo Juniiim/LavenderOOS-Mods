@@ -109,7 +109,7 @@ public class LightsService extends SystemService {
                             int color = brightness & 255;
                             setLightLocked(color | -16777216 | (color << 16) | (color << 8), 0, 0, 0, brightnessMode);
                         } else {
-                            setLightLocked(brightness, 0, 0, 0, brightnessMode);
+                            setLightLocked((brightness << 2) | 3, 0, 0, 0, brightnessMode);
                         }
                     }
                     if (LightsService.this.mOPColorDisplayManager != null) {

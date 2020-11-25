@@ -74,6 +74,7 @@ public class kth {
     private static final String fL = "0";
     private static final float gL = 0.1f;
     private static final int hL = 1000;
+    private static String strNode = "/proc/tp_gesture";
     private boolean AK;
     private boolean BK = false;
     SensorEventListener DK = new rtg(this);
@@ -245,6 +246,9 @@ public class kth {
         vd();
         this.wK = new File(cL).exists();
         this.mTelecomManager = (TelecomManager) this.mContext.getSystemService("telecom");
+        if (new File("/sys/touchpanel/double_tap").exists()) {
+            strNode = "/sys/touchpanel/double_tap";
+        }
     }
 
     private void Ap() {
@@ -313,11 +317,15 @@ public class kth {
         }
         zta(contentResolver);
         int i = this.iK;
-        bio.zta(aL, new byte[]{(byte) (i & sis.zta.zta.zta.zta.MAX), (byte) ((i >> 8) & sis.zta.zta.zta.zta.MAX)});
+        byte[] bArr = {(byte) (i & sis.zta.zta.zta.zta.MAX), (byte) ((i >> 8) & sis.zta.zta.zta.zta.MAX)};
+        if (new File(aL).exists()) {
+            bio.zta(aL, bArr);
+        }
         if (Settings.System.getIntForUser(contentResolver, "oem_acc_anti_misoperation_screen", 0, -2) == 1) {
             z = true;
         }
         this.zK = z;
+        bio.bio(strNode, String.valueOf(this.iK >> 7));
     }
 
     private void Ia(boolean z) {

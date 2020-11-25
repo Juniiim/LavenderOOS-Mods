@@ -99,7 +99,7 @@ public class DozeMachine {
                     return 1;
                 case 6:
                 case 7:
-                    return 3;
+                    return 2;
                 default:
                     return 0;
             }

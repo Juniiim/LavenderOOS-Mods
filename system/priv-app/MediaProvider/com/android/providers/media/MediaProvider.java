@@ -383,26 +383,10 @@ public class MediaProvider extends ContentProvider {
             try {
                 sCachedVolumeScanPaths.put("internal", MediaStore.getVolumeScanPaths("internal"));
                 for (String str : sCachedExternalVolumeNames) {
-                    if (str.equals("external_primary")) {
-                        if (DBG) {
-                            Log.d(TAG, "updateVolumes MediaStore.getVolumeScanPaths(volumeName): " + str + " start");
-                        }
-                        Collection<File> volumeScanPaths = MediaStore.getVolumeScanPaths(str);
-                        if (DBG) {
-                            Log.d(TAG, "updateVolumes MediaStore.getVolumeScanPaths(volumeName): " + str + " end");
-                        }
-                        File file = new File(EMULATED_PATH, Integer.toString(999));
-                        try {
-                            volumeScanPaths.add(file.getCanonicalFile());
-                        } catch (IOException e) {
-                            Log.w(TAG, "Failed to resolve " + file + ": " + e);
-                            volumeScanPaths.add(file);
-                        }
-                        sCachedVolumeScanPaths.put(str, volumeScanPaths);
-                    }
+                    sCachedVolumeScanPaths.put(str, MediaStore.getVolumeScanPaths(str));
                 }
-            } catch (FileNotFoundException e2) {
-                throw new IllegalStateException(e2.getMessage());
+            } catch (FileNotFoundException e) {
+                throw new IllegalStateException(e.getMessage());
             }
         }
     }

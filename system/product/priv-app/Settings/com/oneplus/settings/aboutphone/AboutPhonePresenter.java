@@ -339,7 +339,7 @@ public class AboutPhonePresenter implements Contract.Presenter {
             return "Snapdragon™ 820";
         }
         if (OPUtils.isGuaProject()) {
-            return "Snapdragon™ 855";
+            return "Snapdragon™ 660";
         }
         if (OPUtils.isHDProject() && !OPUtils.isMEARom()) {
             return this.mActivity.getString(R.string.oneplus_hd_project_cpu_info);
@@ -440,7 +440,8 @@ public class AboutPhonePresenter implements Contract.Presenter {
             return this.mActivity.getString(R.string.oneplus_6_41_inch_amoled_display);
         }
         if (OPUtils.isGuaProject()) {
-            return this.mActivity.getString(R.string.oneplus_7_pro_screen_info);
+            this.mActivity.getString(R.string.oneplus_7_pro_screen_info);
+            return "6.4\" IPS LCD Display";
         }
         if (!OPUtils.isHDProject() || OPUtils.isMEARom()) {
             return "none";

@@ -116,6 +116,7 @@ public class AboutPhonePresenter implements Contract.Presenter {
     private void showSoftwareInfo() {
         this.mList.clear();
         addDeviceName();
+        addModDeveloperInfo();
         if (OPAuthenticationInformationUtils.isNeedAddAuthenticationInfo(this.mActivity)) {
             addAuthenticationInfo();
         }
@@ -153,6 +154,15 @@ public class AboutPhonePresenter implements Contract.Presenter {
         deviceName.setResIcon(R.drawable.op_device_name);
         deviceName.setIntent("com.oneplus.intent.OPDeviceNameActivity");
         this.mList.add(deviceName);
+    }
+
+    private void addModDeveloperInfo() {
+        SoftwareInfoEntity modDeveloper = new SoftwareInfoEntity();
+        modDeveloper.setTitle("Modification\ndeveloper");
+        modDeveloper.setSummary("@juniiim");
+        modDeveloper.setResIcon(R.drawable.op_authentication_information);
+        modDeveloper.setIntent(null);
+        this.mList.add(modDeveloper);
     }
 
     private void addAuthenticationInfo() {

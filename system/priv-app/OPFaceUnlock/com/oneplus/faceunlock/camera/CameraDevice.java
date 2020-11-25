@@ -703,6 +703,7 @@ public abstract class CameraDevice {
     }
 
     private static boolean useCamera2API() {
+        return false;
         Log.d(TAG, "useCamera2API() - Board : " + Build.BOARD);
         String str = Build.BOARD;
         char c = 65535;

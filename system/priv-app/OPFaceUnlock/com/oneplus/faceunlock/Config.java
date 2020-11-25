@@ -99,6 +99,7 @@ public class Config {
     }
 
     public static boolean useTEE() {
+        return false;
         return selectBooleanConfig(m_ConfigPreferences, PREF_KEY_USE_TEE, true);
     }
 }

@@ -335,7 +335,7 @@ public class DozeSensors {
         private float mMaxRange;
         private boolean mProximityChecking;
         private boolean mRegistered;
-        private int mSensorType = 33171026;
+        private int mSensorType = 33171036;
         private final String mTag = "DozeSensors.PickupCheck";
 
         public void onAccuracyChanged(Sensor sensor, int i) {

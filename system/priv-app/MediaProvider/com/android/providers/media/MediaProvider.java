@@ -1623,7 +1623,7 @@ public class MediaProvider extends ContentProvider {
     private static void assertFileColumnsSane(int i, Uri uri, ContentValues contentValues) throws VolumeArgumentException {
         if (contentValues.containsKey("_data")) {
             try {
-                Collection<File> volumeScanPaths = getVolumeScanPaths(resolveVolumeName(uri));
+                Collection<File> volumeScanPaths = getVolumeScanPaths(extractVolumeName(contentValues.getAsString("_data")));
                 File canonicalFile = new File(contentValues.getAsString("_data")).getCanonicalFile();
                 if (!FileUtils.contains(volumeScanPaths, canonicalFile)) {
                     throw new VolumeArgumentException(canonicalFile, volumeScanPaths);
